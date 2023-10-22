@@ -68,12 +68,13 @@ fun ScreenOne(modifier: Modifier.Companion = Modifier, navController: NavHostCon
             )
             Button(
                 onClick = {
-                    controller.navigate("pantalla2")
+                    navController.navigate("segundo/1") // Navega a SecondScreen con un ID
                 },
                 modifier = buttonModifier
             ) {
                 Text(text = "Iniciar Juego")
             }
+
 
             Button(
                 onClick = {
