@@ -1,5 +1,5 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
-
+/*
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -25,3 +25,4 @@ fun SecondaryScreen(controller: NavHostController, id: Int = 10) {
         }
     }
 }
+*/
