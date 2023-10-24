@@ -1,3 +1,5 @@
+package ar.edu.unlam.mobile.scaffold.ui.screens
+
 import androidx.lifecycle.ViewModel
 import dagger.Module
 import dagger.Provides
@@ -7,7 +9,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
 
-/*@HiltViewModel
+@HiltViewModel
 class SecondScreenViewModel @Inject constructor() : ViewModel() {
     // Propiedades y lógica del ViewModel
 }
@@ -20,4 +22,4 @@ object SecondScreenModule {
     fun provideSecondScreenViewModel(viewModel: SecondScreenViewModel): ViewModel {
         return viewModel
     }
-}*/
+}
