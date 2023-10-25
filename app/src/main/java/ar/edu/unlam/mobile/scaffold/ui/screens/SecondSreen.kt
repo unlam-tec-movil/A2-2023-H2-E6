@@ -65,6 +65,12 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
+        Button(onClick = {
+
+            navController.navigate("ScreenOne")
+        }) {
+            Text(text = "volver a la pantalla principal")
+        }
     }
 }
 
@@ -87,90 +93,3 @@ fun AnswerCard(answer: String, isSelected: Boolean, onAnswerSelected: () -> Unit
         }
     }
 }
-/*
-@Composable
-fun SecondScreen(navController: NavController, id: Int) {
-var selectedAnswer by remember { mutableStateOf("") }
-
-Column(
-modifier = Modifier
-    .fillMaxSize()
-    .padding(16.dp)
-) {
-// Crear una lista de preguntas y respuestas
-val questionsAndAnswers = listOf(
-    "¿Quien es el padre de Luke Skywalker?" to listOf("Darth Maul", "Darth Vader", "Yoda", "Darth Sidious"),
-    "¿Cuál es el color del sable de luz de Luke Skywalker?" to listOf("Azul", "Verde", "Rojo", "Morado")
-)
-
-// Recorrer la lista y mostrar las preguntas y respuestas en dos columnas
-Row(
-    modifier = Modifier.fillMaxWidth(),
-    horizontalArrangement = Arrangement.SpaceBetween
-) {
-    questionsAndAnswers.forEach { (question, answers) ->
-        Column(
-            modifier = Modifier.weight(1f),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp),
-            ) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = question,
-                        fontSize = 18.sp,
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
-            }
-        }
-            Spacer(modifier = Modifier.height(16.dp))
-
-            LazyColumn {
-                items(answers) { answer ->
-                    AnswerCard(
-                        answer = answer,
-                        isSelected = answer == selectedAnswer,
-                        onAnswerSelected = {
-                            selectedAnswer = answer
-                        }
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                }
-            }
-        }
-
-
-
-
-
-@Composable
-fun AnswerCard(answer: Int, isSelected: Boolean, onAnswerSelected: () -> Unit) {
-Card(
-    modifier = Modifier
-        .fillMaxWidth()
-        .clickable { onAnswerSelected() },
-
-    ) {
-    Column(
-        modifier = Modifier.padding(16.dp),
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = answer,
-            fontSize = 16.sp
-        )
-}
-
-    }
-}
-}   }   }
-
-*/

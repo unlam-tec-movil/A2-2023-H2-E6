@@ -12,7 +12,10 @@ import ar.edu.unlam.mobile.scaffold.ui.screens.ScreenOne
 import ar.edu.unlam.mobile.scaffold.ui.screens.SecondScreen
 import ar.edu.unlam.mobile.scaffold.ui.theme.MyApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
+
+
 @AndroidEntryPoint
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +25,7 @@ class MainActivity : ComponentActivity() {
 
                 NavHost(
                     navController = navController,
-                    startDestination = "screenOne",
+                    startDestination = "screenOne"
                 ) {
                     composable("screenOne") {
                         ScreenOne(navController = navController)
@@ -31,22 +34,20 @@ class MainActivity : ComponentActivity() {
                     composable(
                         route = "segundo/{id}",
                         arguments = listOf(navArgument("id") { type = NavType.IntType })
-                    ) { entry -> // ktlint-disable trailing-comma-on-call-site
-                        val id = entry.arguments?.getInt("id") ?: 1
-                        SecondScreen(navController = navController, id = id)
-                    }
-                    composable(
-                        route = "home/{id}",
-                        arguments = listOf(navArgument("id") { type = NavType.IntType })
                     ) { entry ->
                         val id = entry.arguments?.getInt("id") ?: 1
-                        ScreenOne(navController = navController)
+                        SecondScreen(navController = navController, id = id)
                     }
                 }
             }
         }
     }
 }
+
+
+
+
+
 /*class MainActivity : ComponentActivity() {
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {

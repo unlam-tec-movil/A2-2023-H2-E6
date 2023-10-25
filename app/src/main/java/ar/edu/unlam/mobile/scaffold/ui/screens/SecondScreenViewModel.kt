@@ -9,7 +9,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
 
-/*@HiltViewModel
+@HiltViewModel
 class SecondScreenViewModel @Inject constructor() : ViewModel() {
     // Propiedades y lógica del ViewModel
 }
@@ -22,4 +22,4 @@ object SecondScreenModule {
     fun provideSecondScreenViewModel(viewModel: SecondScreenViewModel): ViewModel {
         return viewModel
     }
-}*/
+}
