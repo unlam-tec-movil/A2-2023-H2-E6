@@ -1,4 +1,4 @@
-package ar.edu.unlam.mobile.scaffold.data.kitty.di
+package ar.edu.unlam.mobile.scaffold.data.kitty.sw.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

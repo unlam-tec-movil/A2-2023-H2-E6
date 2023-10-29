@@ -6,6 +6,6 @@ import retrofit2.http.Path
 
 interface SwApi {
     @GET("planets/{id}/")
-    fun getPlanet(@Path("id") planetId: Int): Call<Planeta> // Asegúrate de que Planeta esté correctamente importada
+    fun getPlanet(@Path("id") planetId: Int): Call<PlanetaApiModel>
 }
 

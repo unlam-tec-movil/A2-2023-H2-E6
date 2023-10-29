@@ -7,9 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import ar.edu.unlam.mobile.scaffold.data.Sw.network.Planeta
+import ar.edu.unlam.mobile.scaffold.data.Sw.network.PlanetaApiModel
 import ar.edu.unlam.mobile.scaffold.data.Sw.network.SwApi
-import ar.edu.unlam.mobile.scaffold.data.kitty.repository.SwApiRepsitory
+import ar.edu.unlam.mobile.scaffold.data.kitty.sw.repository.PlanetaDefaultRepsitory
 import ar.edu.unlam.mobile.scaffold.ui.screens.ui.theme.MobileScaffoldingTheme
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,18 +25,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             MobileScaffoldingTheme {
 
-                val swApiRepository = SwApiRepsitory(swApi)
+                val swApiRepository = PlanetaDefaultRepsitory(swApi)
                 val planetId = 1
 
-                val callback = object : Callback<Planeta> {
-                    override fun onResponse(call: Call<Planeta>, response: Response<Planeta>) {
+                val callback = object : Callback<PlanetaApiModel> {
+                    override fun onResponse(call: Call<PlanetaApiModel>, response: Response<PlanetaApiModel>) {
                         if (response.isSuccessful) {
                             val planet = response.body()
 
                         }
                     }
 
-                    override fun onFailure(call: Call<Planeta>, t: Throwable) {
+                    override fun onFailure(call: Call<PlanetaApiModel>, t: Throwable) {
 
                     }
                 }
@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
         }
     }
     @Composable
-    fun PlanetDetails(planeta: Planeta) {
+    fun PlanetDetails(planeta: PlanetaApiModel) {
         Column {
 
             Text(text = "Nombre: ${planeta.name}")
@@ -58,12 +58,12 @@ class MainActivity : ComponentActivity() {
 
     @Preview
     @Composable
-    fun PlanetPreview(@PreviewParameter(PlanetaPreviewProvider::class) planeta: Planeta) {
+    fun PlanetPreview(@PreviewParameter(PlanetaPreviewProvider::class) planeta: PlanetaApiModel) {
         PlanetDetails(planeta)
     }
 
-    class PlanetaPreviewProvider : PreviewParameterProvider<Planeta> {
-        override val values: Sequence<Planeta> = sequenceOf(
+    class PlanetaPreviewProvider : PreviewParameterProvider<PlanetaApiModel> {
+        override val values: Sequence<PlanetaApiModel> = sequenceOf(
 
         )
     }

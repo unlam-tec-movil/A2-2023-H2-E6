@@ -1,4 +1,4 @@
-package ar.edu.unlam.mobile.scaffold.data.kitty.di
+package ar.edu.unlam.mobile.scaffold.data.kitty.sw.di
 import ar.edu.unlam.mobile.scaffold.data.Sw.network.SwApi
 import com.google.gson.Gson
 import dagger.Module
