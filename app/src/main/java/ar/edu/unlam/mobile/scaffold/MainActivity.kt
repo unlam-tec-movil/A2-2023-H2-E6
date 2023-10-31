@@ -12,17 +12,13 @@ import ar.edu.unlam.mobile.scaffold.ui.screens.ScreenOne
 import ar.edu.unlam.mobile.scaffold.ui.screens.SecondScreen
 import ar.edu.unlam.mobile.scaffold.ui.theme.MyApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
-
-
 @AndroidEntryPoint
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
                 val navController = rememberNavController()
-
                 NavHost(
                     navController = navController,
                     startDestination = "screenOne"
