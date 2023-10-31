@@ -17,7 +17,6 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
     var selectedAnswer by remember { mutableStateOf("") }
     val buttonModifier = Modifier
         .padding(16.dp)
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -27,7 +26,6 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp),
-
         ) {
             Column(
                 modifier = Modifier.fillMaxSize(),
@@ -41,7 +39,6 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
                 )
             }
         }
-
         Spacer(modifier = Modifier.height(16.dp))
 
         LazyColumn {
@@ -53,7 +50,6 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
                     3 -> "Darth Sidious"
                     else -> ""
                 }
-
                 AnswerCard(
                     answer = answer,
                     isSelected = answer == selectedAnswer,
@@ -61,7 +57,6 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
                         selectedAnswer = answer
                     },
                 )
-
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
@@ -73,14 +68,12 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
         }
     }
 }
-
 @Composable
 fun AnswerCard(answer: String, isSelected: Boolean, onAnswerSelected: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onAnswerSelected() },
-
     ) {
         Column(
             modifier = Modifier.padding(16.dp),

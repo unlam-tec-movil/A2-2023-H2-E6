@@ -13,7 +13,6 @@ import javax.inject.Inject
 class SecondScreenViewModel @Inject constructor() : ViewModel() {
     // Propiedades y lógica del ViewModel
 }
-
 @Module
 @InstallIn(SingletonComponent::class)
 object SecondScreenModule {
