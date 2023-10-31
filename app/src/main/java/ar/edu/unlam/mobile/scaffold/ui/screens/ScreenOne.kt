@@ -32,23 +32,18 @@ fun ScreenOne(modifier: Modifier.Companion = Modifier, navController: NavHostCon
     val backgroundModifier = Modifier
         .fillMaxSize()
         .background(Color.White)
-
-    // Buttons
     val textState = remember { mutableStateOf("") }
     val buttonModifier = Modifier
         .padding(16.dp)
-
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-
         Image(
             painter = backgroundImageRes,
             contentDescription = null,
             modifier = backgroundModifier,
             contentScale = ContentScale.Crop
         )
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -74,8 +69,6 @@ fun ScreenOne(modifier: Modifier.Companion = Modifier, navController: NavHostCon
             ) {
                 Text(text = "Iniciar Juego")
             }
-
-
             Button(
                 onClick = {
                     System.exit(0)
