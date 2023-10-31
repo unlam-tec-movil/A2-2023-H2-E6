@@ -33,7 +33,7 @@ fun ScreenOne(modifier: Modifier.Companion = Modifier, navController: NavHostCon
         .fillMaxSize()
         .background(Color.White)
 
-    // Buttons
+
     val textState = remember { mutableStateOf("") }
     val buttonModifier = Modifier
         .padding(16.dp)
