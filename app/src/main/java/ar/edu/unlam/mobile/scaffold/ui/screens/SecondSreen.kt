@@ -40,7 +40,6 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
-
         LazyColumn {
             items(4) { index ->
                 val answer = when (index) {
@@ -61,7 +60,6 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
             }
         }
         Button(onClick = {
-
             navController.navigate("ScreenOne")
         }) {
             Text(text = "volver a la pantalla principal")
