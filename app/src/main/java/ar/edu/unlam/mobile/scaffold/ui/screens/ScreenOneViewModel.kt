@@ -8,18 +8,16 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Inject
 
-
 @HiltViewModel
 class ScreenOneViewModel @Inject constructor(val screenOne: ScreenOne) : ViewModel() {
     class ScreenOne {
-
-    }
-    @Module
-    @InstallIn(SingletonComponent::class)
-    object ScreenOneModule {
-        @Provides
-        fun provideScreenOne(): ScreenOne {
-            return ScreenOne()
+        @Module
+        @InstallIn(SingletonComponent::class)
+        object ScreenOneModule {
+            @Provides
+            fun provideScreenOne(): ScreenOne {
+                return ScreenOne()
+            }
         }
     }
 }
