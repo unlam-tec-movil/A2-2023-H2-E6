@@ -11,7 +11,7 @@ data class PlanetaApiModel(
         return Planeta(
             name = name,
             climate = climate,
-            terrain = terrain,
-            )
+            terrain = terrain
+        )
     }
 }
