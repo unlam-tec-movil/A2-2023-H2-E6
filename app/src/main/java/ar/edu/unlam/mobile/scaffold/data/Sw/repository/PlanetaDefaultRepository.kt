@@ -1,5 +1,4 @@
 package ar.edu.unlam.mobile.scaffold.data.Sw.repository
-
 import retrofit2.Callback
 import ar.edu.unlam.mobile.scaffold.data.Sw.network.PlanetaApiModel
 import ar.edu.unlam.mobile.scaffold.data.Sw.network.SwApi
