@@ -10,8 +10,5 @@ class PlanetaDefaultRepsitory(private val swApi: SwApi) {
     fun getPlanet(planetId: Int, callback: Callback<PlanetaApiModel>) {
         // Realiza la llamada a la API utilizando swApi
         val call = swApi.getPlanet(planetId)
-
-
-
     }
 }
