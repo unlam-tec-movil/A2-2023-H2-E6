@@ -1,6 +1,5 @@
 package ar.edu.unlam.mobile.scaffold.data.Sw.repository
 
-
 import ar.edu.unlam.mobile.scaffold.data.Sw.network.PlanetaApiModel
 import ar.edu.unlam.mobile.scaffold.data.Sw.network.SwApi
 import retrofit2.Callback // ktlint-disable import-ordering
