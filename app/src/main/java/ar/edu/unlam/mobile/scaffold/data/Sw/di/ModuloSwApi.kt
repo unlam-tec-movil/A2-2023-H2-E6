@@ -7,5 +7,4 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 
 @Module
-abstract class ModuloSwApi {
-}
+abstract class ModuloSwApi

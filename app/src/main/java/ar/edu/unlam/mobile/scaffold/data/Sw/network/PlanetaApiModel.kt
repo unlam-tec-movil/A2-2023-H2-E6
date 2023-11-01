@@ -7,14 +7,11 @@ data class PlanetaApiModel(
     val climate: String,
     val terrain: String
 ) {
-
     fun toPlaneta(): Planeta {
         return Planeta(
             name = name,
             climate = climate,
             terrain = terrain,
-
             )
     }
-
 }
