@@ -20,4 +20,5 @@ class ScreenOneViewModel @Inject constructor(val screenOne: ScreenOne) : ViewMod
             }
         }
     }
+
 }
