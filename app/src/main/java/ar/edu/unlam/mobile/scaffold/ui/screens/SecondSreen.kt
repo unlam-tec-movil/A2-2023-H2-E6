@@ -11,13 +11,40 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import ar.edu.unlam.mobile.scaffold.data.Sw.Local.PreguntasRepuestas
 
 @Composable
-fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneViewModel = hiltViewModel()) { // Cambiar el tipo a NavController
+fun SecondScreen(navController: NavController, id: Int, viewModel: SecondScreenViewModel = hiltViewModel()) {
+
     var selectedAnswer by remember { mutableStateOf("") }
     val buttonModifier = Modifier
-        .padding(16.dp)
-    Column(
+    var preguntaStarWars by remember { mutableStateOf<PreguntasRepuestas?>(null) }
+
+    // Observa la variable preguntaStarWars
+    LaunchedEffect(viewModel.preguntaStarWars) {
+        preguntaStarWars = viewModel.preguntaStarWars
+    }
+    Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp),
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            preguntaStarWars?.let { pregunta ->
+                Text(
+                    text = pregunta.pregunta,
+                    fontSize = 18.sp,
+                    modifier = Modifier.padding(16.dp),
+                )
+            }
+        }
+    }
+      //  .padding(16.dp)
+   /* Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
@@ -38,7 +65,7 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
                     modifier = Modifier.padding(16.dp),
                 )
             }
-        }
+        }*/
         Spacer(modifier = Modifier.height(16.dp))
         LazyColumn {
             items(4) { index ->
@@ -60,7 +87,9 @@ fun SecondScreen(navController: NavController, id: Int, viewModel: ScreenOneView
             }
         }
     }
-}
+
+
+
 @Composable
 fun AnswerCard(answer: String, isSelected: Boolean, onAnswerSelected: () -> Unit) {
     Card(
