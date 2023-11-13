@@ -13,6 +13,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import ar.edu.unlam.mobile.scaffold.data.local.GameResult
+import kotlinx.coroutines.flow.MutableStateFlow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,11 +24,12 @@ fun OptionResultScreen(
     viewModel: OptionResultViewModel = hiltViewModel(),
 ) {
     val gameResults = viewModel.gameResults.collectAsState()
-
+   // val gameResults: MutableStateFlow<List<GameResult>> =
     Surface(
         modifier = modifier,
         color = MaterialTheme.colorScheme.background,
     ) {
+
         Column {
             TopAppBar(
                 title = {
