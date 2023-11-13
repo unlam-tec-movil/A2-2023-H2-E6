@@ -4,10 +4,11 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ar.edu.unlam.mobile.scaffold.data.game.local.GameResult
+//import ar.edu.unlam.mobile.scaffold.data.game.local.GameResult
 import ar.edu.unlam.mobile.scaffold.data.game.local.NewDatabase
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
+import ar.edu.unlam.mobile.scaffold.data.local.GameResult
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -30,7 +31,9 @@ data class GameUIState(
 )
 
 @HiltViewModel
+
 class OptionGameViewModel @Inject constructor(
+
     private val game: GameUseCase,
     private val database: NewDatabase
 ) : ViewModel() {
@@ -76,7 +79,8 @@ class OptionGameViewModel @Inject constructor(
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
             val gameResult = GameResult(gameResult = result)
-            database.NewDao().insert(gameResult)
+            database.newDao().insert(gameResult)
+
         }
     }
 
