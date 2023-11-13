@@ -50,6 +50,8 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.room:room-common:2.6.0'
+    implementation 'androidx.room:room-ktx:2.6.0'
     def nav_version = "2.7.1"
     def hilt_version = "2.47"
     def retrofit_version = "2.9.0"
