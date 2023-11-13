@@ -4,6 +4,8 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import ar.edu.unlam.mobile.scaffold.data.game.local.GameResult
+import ar.edu.unlam.mobile.scaffold.data.game.local.NewDatabase
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
@@ -13,13 +15,13 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
 @Immutable
 sealed interface OptionGameUIState {
     data class Success(val optionGame: OptionGame) : OptionGameUIState
     object Loading : OptionGameUIState
     data class Error(val message: String) : OptionGameUIState
     data class Correct(val message: String) : OptionGameUIState
-
     data class Wrong(val message: String) : OptionGameUIState
 }
 
@@ -30,6 +32,7 @@ data class GameUIState(
 @HiltViewModel
 class OptionGameViewModel @Inject constructor(
     private val game: GameUseCase,
+    private val database: NewDatabase
 ) : ViewModel() {
 
     private val _optionGameState = mutableStateOf(OptionGameUIState.Loading)
@@ -39,6 +42,8 @@ class OptionGameViewModel @Inject constructor(
     )
 
     val uiState = _uiState.asStateFlow()
+
+    private var gameResult: String = ""
 
     init {
         getNewGame()
@@ -53,15 +58,38 @@ class OptionGameViewModel @Inject constructor(
     }
 
     fun validateGame(optionGame: OptionGame, selectedOption: Option) {
-        // Guardar el resultado en una variable y almacenarlo en Room
-        if (optionGame.isCorrect(selectedOption)) {
-            _uiState.value = GameUIState(OptionGameUIState.Correct("Correcto"))
+        gameResult = if (optionGame.isCorrect(selectedOption)) {
+            "Correcto"
         } else {
-            _uiState.value = GameUIState(
-                OptionGameUIState.Wrong(
-                    "Incorrecto la correcta era ${optionGame.answer.content}",
-                ),
-            )
+            "Incorrecto la correcta era ${optionGame.answer.content}"
         }
+
+        saveGameResult(gameResult)
+
+        if (optionGame.isCorrect(selectedOption)) {
+            _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
+        } else {
+            _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
+        }
+    }
+
+    private fun saveGameResult(result: String) {
+        viewModelScope.launch {
+            val gameResult = GameResult(gameResult = result)
+            database.NewDao().insert(gameResult)
+        }
+    }
+
+
+    private val _navigateToScreen1 = mutableStateOf(false)
+    val navigateToScreen1: Boolean
+        get() = _navigateToScreen1.value
+
+    fun onNavigateToScreen1() {
+        _navigateToScreen1.value = true
+    }
+
+    fun onNavigationHandled() {
+        _navigateToScreen1.value = false
     }
 }

@@ -6,3 +6,8 @@ plugins {
     id 'org.jetbrains.kotlinx.kover' version '0.7.3'
 
 }
+ext {
+    kotlin_version = "1.6.20"
+    nav_version = "2.4.1"
+    room_version = '2.4.2'
+}

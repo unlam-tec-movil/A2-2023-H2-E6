@@ -2,6 +2,7 @@ package ar.edu.unlam.mobile.scaffold.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -36,6 +37,12 @@ fun OptionResultScreen(
             gameResults.value.forEach { result ->
                 Text(text = result.gameResult)
             }
+        }
+        Button(onClick = {
+
+            navController.navigate("ScreenOne")
+        }) {
+            Text(text = "volver a la pantalla principal")
         }
     }
 }

@@ -77,6 +77,14 @@ fun ScreenOne(
             }
             Button(
                 onClick = {
+                    navController.navigate("segundo/2") // Navega a SecondScreen con un ID
+                },
+                modifier = buttonModifier,
+            ) {
+                Text(text = "Resultado")
+            }
+            Button(
+                onClick = {
                     System.exit(0)
                 },
                 modifier = buttonModifier,
