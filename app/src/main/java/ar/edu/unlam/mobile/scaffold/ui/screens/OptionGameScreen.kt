@@ -124,13 +124,15 @@ fun Body(
         Button(onClick = {
             viewModel.onNavigateToScreen1()
         }) {
-            Text(text = "Volver a la pantalla principal",
+            Text(
+                text = "Volver a la pantalla principal",
                 )
         }
     }
 }
 @Composable
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
+
     Card(
         modifier = Modifier.fillMaxWidth()
             .background(Color.Blue)
