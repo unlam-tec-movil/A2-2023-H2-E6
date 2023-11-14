@@ -1,4 +1,4 @@
-ppackage ar.edu.unlam.mobile.scaffold.ui.screens
+package ar.edu.unlam.mobile.scaffold.ui.screens
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.mutableStateOf
