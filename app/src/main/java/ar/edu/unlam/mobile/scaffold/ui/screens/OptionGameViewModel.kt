@@ -32,8 +32,8 @@ data class GameUIState(
 class OptionGameViewModel @Inject constructor(
 
     private val game: GameUseCase,
-    // private val database: SwDatabase
-    ) : ViewModel() {
+// private val database: SwDatabase
+) : ViewModel() {
     private val _optionGameState = mutableStateOf(OptionGameUIState.Loading)
 
     private val _uiState = MutableStateFlow(
