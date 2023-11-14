@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                                 // modifier = Modifier.padding(paddingValues),
                                 snackbarHostState = snackbarHostState,
                                 navController = navController,
-                                )
+                            )
                         }
                         /*composable(
                             route = "resultado/{id}",

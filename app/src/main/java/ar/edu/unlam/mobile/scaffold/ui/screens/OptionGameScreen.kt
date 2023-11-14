@@ -29,7 +29,6 @@ import androidx.navigation.NavController
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
 
-
 @Composable
 fun OptionGameScreen(
     navController: NavController,
@@ -124,8 +123,8 @@ fun Body(
 
         Button(onClick = {
             viewModel.onNavigateToScreen1()
-        })
-        {
+        }
+          ) {
             Text(text = "Volver a la pantalla principal",
                 )
         }
@@ -135,22 +134,23 @@ fun Body(
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth()
-
             .background(Color.Blue)
-            .clickable { onOptionSelected() },
-
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.Center,
+        Card(
+            modifier = Modifier.fillMaxWidth()
+                .background(Color.Blue)
+                .clickable { onOptionSelected() },
         ) {
-            Text(
-                text = answer,
-                fontSize = 16.sp,
-                color=Color.Cyan,
-            )
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.Center,
+            ) {
+                Text(
+                    text = answer,
+                    fontSize = 16.sp,
+                    color = Color.Cyan,
+                )
+            }
         }
     }
 }
-
-

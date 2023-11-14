@@ -67,7 +67,7 @@ class OptionGameViewModel @Inject constructor(
             "Incorrecto la correcta era ${optionGame.answer.content}"
         }
 
-           saveGameResult(gameResult)
+         //  saveGameResult(gameResult)
 
         if (optionGame.isCorrect(selectedOption)) {
             _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
