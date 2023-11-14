@@ -11,4 +11,5 @@ import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
 )
 abstract class SwDatabase : RoomDatabase() {
     abstract fun resultDao(): ResultDao
+
 }

@@ -77,7 +77,8 @@ class OptionGameViewModel @Inject constructor(
 
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
-            val gameResult = GameResult(gameResult = result)
+            val id = 0
+            val gameResult = GameResult(gameResult = result, id = id)
             // database.newDao().insert(gameResult) Todo, esto tiene que ir en el repo y ser consumido por el service
         }
     }
