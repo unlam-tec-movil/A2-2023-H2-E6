@@ -123,8 +123,7 @@ fun Body(
 
         Button(onClick = {
             viewModel.onNavigateToScreen1()
-        }
-          ) {
+        }) {
             Text(text = "Volver a la pantalla principal",
                 )
         }

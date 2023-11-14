@@ -67,8 +67,7 @@ class OptionGameViewModel @Inject constructor(
             "Incorrecto la correcta era ${optionGame.answer.content}"
         }
 
-         //  saveGameResult(gameResult)
-
+        // saveGameResult(gameResult)
         if (optionGame.isCorrect(selectedOption)) {
             _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
         } else {
@@ -80,7 +79,7 @@ class OptionGameViewModel @Inject constructor(
         viewModelScope.launch {
             val id = 0
             val gameResult = GameResult(gameResult = result, id = id)
-           //  database.ResultDao().insert(gameResult) Todo, esto tiene que ir en el repo y ser consumido por el service
+            //  database.ResultDao().insert(gameResult) Todo, esto tiene que ir en el repo y ser consumido por el service
         }
     }
 
