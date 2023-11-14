@@ -11,9 +11,10 @@ import kotlinx.coroutines.launch
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
+import javax.inject.Inject
 // import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
 // import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
-import javax.inject.Inject
+
 
 @Immutable
 sealed interface OptionGameUIState {
