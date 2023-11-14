@@ -1,7 +1,6 @@
 package ar.edu.unlam.mobile.scaffold.ui.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -50,7 +49,7 @@ fun PhotoCard(text: String, title: String, imageUrl: String, action: () -> Unit,
                     Column {
                         Text(
                             text = title,
-                            color=Color.Red,
+                            color = Color.Red,
                             style = MaterialTheme.typography.headlineSmall,
                         )
                     }
@@ -75,8 +74,6 @@ fun PhotoCard(text: String, title: String, imageUrl: String, action: () -> Unit,
                 Modifier
                     .padding(horizontal = 8.dp)
                     .fillMaxWidth(),
-
-
             ) {
                 // Botones
 

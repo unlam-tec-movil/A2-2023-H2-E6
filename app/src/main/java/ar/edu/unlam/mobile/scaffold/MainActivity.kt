@@ -1,5 +1,4 @@
 package ar.edu.unlam.mobile.scaffold
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -15,7 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import ar.edu.unlam.mobile.scaffold.ui.screens.OptionGameScreen
-//import ar.edu.unlam.mobile.scaffold.ui.screens.OptionResultScreen
+// import ar.edu.unlam.mobile.scaffold.ui.screens.OptionResultScreen
 import ar.edu.unlam.mobile.scaffold.ui.screens.ScreenOne
 import ar.edu.unlam.mobile.scaffold.ui.theme.MyApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,7 +52,6 @@ class MainActivity : ComponentActivity() {
                                 // modifier = Modifier.padding(paddingValues),
                                 snackbarHostState = snackbarHostState,
                                 navController = navController,
-
                                 )
                         }
                         /*composable(

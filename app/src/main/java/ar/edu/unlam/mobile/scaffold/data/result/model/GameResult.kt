@@ -1,6 +1,11 @@
 package ar.edu.unlam.mobile.scaffold.data.result.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class GameResult(
-    val gameResult: String,
+    @PrimaryKey
     val id: Int,
+    val gameResult: String,
 )
