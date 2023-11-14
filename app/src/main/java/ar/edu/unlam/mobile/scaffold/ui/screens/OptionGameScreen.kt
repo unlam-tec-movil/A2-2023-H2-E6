@@ -1,7 +1,11 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
 
+<<<<<<< Updated upstream
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
+=======
+import androidx.compose.foundation.border
+>>>>>>> Stashed changes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,7 +26,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+<<<<<<< Updated upstream
 import androidx.compose.ui.graphics.Color
+=======
+>>>>>>> Stashed changes
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -85,18 +92,20 @@ fun OptionGameScreen(
 }
 
 @Composable
+
 fun Body(
     viewModel: OptionGameViewModel,
     optionGame: OptionGame,
     onAnswerSelected: (selected: Option) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+
     Card(
         modifier = modifier.fillMaxSize(),
     ) {
         Column(
             modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
@@ -129,20 +138,33 @@ fun Body(
 }
 
 @Composable
+<<<<<<< Updated upstream
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
+=======
+
+fun OptionsCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
+    val paddingModifier  = Modifier.padding(10.dp)
+
+>>>>>>> Stashed changes
     Card(
-        modifier = Modifier
+
+        modifier = paddingModifier
             .fillMaxWidth()
-            .clickable { onOptionSelected() },
+            .clickable { onOptionSelected() }
+            .padding(10.dp),
+
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.SpaceEvenly,
         ) {
             Text(
                 text = answer,
+                modifier = paddingModifier,
                 fontSize = 16.sp,
             )
         }
     }
 }
+
+

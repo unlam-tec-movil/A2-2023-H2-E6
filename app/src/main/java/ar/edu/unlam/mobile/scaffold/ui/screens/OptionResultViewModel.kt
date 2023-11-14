@@ -1,5 +1,10 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
+<<<<<<< Updated upstream
 
+=======
+/*
+import ar.edu.unlam.mobile.scaffold.data.game.local.NewDao
+>>>>>>> Stashed changes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.data.game.local.GameResult
@@ -33,3 +38,4 @@ class OptionResultViewModel @Inject constructor(
         }
     }
     }
+    */

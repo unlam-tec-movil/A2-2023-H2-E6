@@ -16,7 +16,7 @@ import androidx.navigation.NavController
 import ar.edu.unlam.mobile.scaffold.data.local.GameResult
 import kotlinx.coroutines.flow.MutableStateFlow
 
-@OptIn(ExperimentalMaterial3Api::class)
+/*@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OptionResultScreen(
     modifier: Modifier = Modifier,
@@ -48,4 +48,4 @@ fun OptionResultScreen(
             Text(text = "volver a la pantalla principal")
         }
     }
-}
+}*/
