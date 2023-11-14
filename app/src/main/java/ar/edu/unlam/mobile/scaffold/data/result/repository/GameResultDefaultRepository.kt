@@ -9,6 +9,4 @@ class GameResultDefaultRepository @Inject constructor(
     database: SwDatabase,
 ) : GameResultRepository {
     private val resultDao: ResultDao = database.resultDao()
- //   database.newDao().insert(gameResult)
-
 }

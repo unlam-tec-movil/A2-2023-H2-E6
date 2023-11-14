@@ -28,7 +28,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
-import kotlinx.coroutines.delay
+
 
 @Composable
 fun OptionGameScreen(
@@ -124,18 +124,13 @@ fun Body(
 
         Button(onClick = {
             viewModel.onNavigateToScreen1()
-        }) {
+        })
+        {
             Text(text = "Volver a la pantalla principal",
-
                 )
-
-
         }
     }
 }
-
-
-
 @Composable
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
     Card(
