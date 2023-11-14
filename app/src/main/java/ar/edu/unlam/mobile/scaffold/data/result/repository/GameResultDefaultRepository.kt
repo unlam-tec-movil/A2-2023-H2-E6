@@ -1,5 +1,5 @@
 package ar.edu.unlam.mobile.scaffold.data.result.repository
-
+/*
 import androidx.room.Entity
 import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
 import ar.edu.unlam.mobile.scaffold.data.result.local.ResultDao
@@ -10,3 +10,4 @@ class GameResultDefaultRepository @Inject constructor(
 ) : GameResultRepository {
     private val resultDao: ResultDao = database.resultDao()
 }
+*/

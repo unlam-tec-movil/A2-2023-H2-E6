@@ -1,5 +1,5 @@
 package ar.edu.unlam.mobile.scaffold.core.database.di
-
+/*
 import android.content.Context
 import androidx.room.Room
 import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
@@ -24,3 +24,4 @@ class DatabaseProvider {
         ).build()
     }
 }
+*/

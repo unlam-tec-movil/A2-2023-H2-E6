@@ -7,10 +7,10 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
+// import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
-import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
+// import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,7 +35,7 @@ data class GameUIState(
 class OptionGameViewModel @Inject constructor(
 
     private val game: GameUseCase,
-    private val database: SwDatabase
+   // private val database: SwDatabase
 ) : ViewModel() {
 
     private val _optionGameState = mutableStateOf(OptionGameUIState.Loading)
@@ -78,7 +78,7 @@ class OptionGameViewModel @Inject constructor(
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
             val id = 0
-            val gameResult = GameResult(gameResult = result, id = id)
+        //    val gameResult = GameResult(gameResult = result, id = id)
             //  database.ResultDao().insert(gameResult) Todo, esto tiene que ir en el repo y ser consumido por el service
         }
     }

@@ -1,5 +1,5 @@
 package ar.edu.unlam.mobile.scaffold.data.result.local
-
+/*
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -13,3 +13,4 @@ interface ResultDao {
     @Query("SELECT * FROM game_Result")
     fun getAllResults(): List<GameResultEntity>
 }
+*/
