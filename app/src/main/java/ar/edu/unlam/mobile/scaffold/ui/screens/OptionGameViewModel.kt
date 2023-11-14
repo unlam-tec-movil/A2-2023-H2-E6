@@ -1,4 +1,4 @@
-package ar.edu.unlam.mobile.scaffold.ui.screens
+ppackage ar.edu.unlam.mobile.scaffold.ui.screens
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.mutableStateOf
@@ -11,10 +11,9 @@ import kotlinx.coroutines.launch
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
-import javax.inject.Inject
-
 // import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
 // import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
+import javax.inject.Inject
 
 @Immutable
 sealed interface OptionGameUIState {
@@ -33,9 +32,8 @@ data class GameUIState(
 class OptionGameViewModel @Inject constructor(
 
     private val game: GameUseCase,
-   // private val database: SwDatabase
+    // private val database: SwDatabase
     ) : ViewModel() {
-
     private val _optionGameState = mutableStateOf(OptionGameUIState.Loading)
 
     private val _uiState = MutableStateFlow(
