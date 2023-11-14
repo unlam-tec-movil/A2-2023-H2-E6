@@ -150,7 +150,7 @@ fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit
                 Text(
                     text = answer,
                     fontSize = 16.sp,
-                    color = Color.Cyan,
+                    color = Color.Black,
                 )
             }
         }
