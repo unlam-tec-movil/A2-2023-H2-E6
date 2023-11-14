@@ -11,9 +11,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 // import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
 // import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
-import javax.inject.Inject
 
 @Immutable
 sealed interface OptionGameUIState {
