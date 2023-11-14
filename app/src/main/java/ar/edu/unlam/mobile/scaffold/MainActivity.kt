@@ -15,7 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import ar.edu.unlam.mobile.scaffold.ui.screens.OptionGameScreen
-import ar.edu.unlam.mobile.scaffold.ui.screens.OptionResultScreen
+//import ar.edu.unlam.mobile.scaffold.ui.screens.OptionResultScreen
 import ar.edu.unlam.mobile.scaffold.ui.screens.ScreenOne
 import ar.edu.unlam.mobile.scaffold.ui.theme.MyApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -56,7 +56,7 @@ class MainActivity : ComponentActivity() {
 
                                 )
                         }
-                        composable(
+                        /*composable(
                             route = "resultado/{id}",
                             arguments = listOf(navArgument("id") { type = NavType.IntType }),
                         ) { entry ->
@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
                                 navController = navController,
 
                                 )
-                        }
+                        }*/
                         composable(
                             route = "home/{id}",
                             arguments = listOf(navArgument("id") { type = NavType.IntType }),

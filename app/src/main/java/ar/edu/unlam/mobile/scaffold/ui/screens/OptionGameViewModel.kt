@@ -5,10 +5,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 //import ar.edu.unlam.mobile.scaffold.data.game.local.GameResult
-import ar.edu.unlam.mobile.scaffold.data.game.local.NewDatabase
+//import ar.edu.unlam.mobile.scaffold.data.game.local.NewDatabase
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
-import ar.edu.unlam.mobile.scaffold.data.local.GameResult
+//import ar.edu.unlam.mobile.scaffold.data.local.GameResult
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,7 +35,7 @@ data class GameUIState(
 class OptionGameViewModel @Inject constructor(
 
     private val game: GameUseCase,
-    private val database: NewDatabase
+  //  private val database: NewDatabase
 ) : ViewModel() {
 
     private val _optionGameState = mutableStateOf(OptionGameUIState.Loading)
@@ -67,7 +67,7 @@ class OptionGameViewModel @Inject constructor(
             "Incorrecto la correcta era ${optionGame.answer.content}"
         }
 
-        saveGameResult(gameResult)
+     //   saveGameResult(gameResult)
 
         if (optionGame.isCorrect(selectedOption)) {
             _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
@@ -76,14 +76,14 @@ class OptionGameViewModel @Inject constructor(
         }
     }
 
-    private fun saveGameResult(result: String) {
+  /*  private fun saveGameResult(result: String) {
         viewModelScope.launch {
             val gameResult = GameResult(gameResult = result)
             database.newDao().insert(gameResult)
 
         }
     }
-
+*/
 
     private val _navigateToScreen1 = mutableStateOf(false)
     val navigateToScreen1: Boolean

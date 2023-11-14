@@ -1,14 +1,7 @@
-package ar.edu.unlam.mobile.scaffold.ui.screens
-<<<<<<< Updated upstream
-
-=======
-/*
-import ar.edu.unlam.mobile.scaffold.data.game.local.NewDao
->>>>>>> Stashed changes
+/*package ar.edu.unlam.mobile.scaffold.ui.screens
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.data.game.local.GameResult
-import ar.edu.unlam.mobile.scaffold.data.game.local.NewDataBase
 import ar.edu.unlam.mobile.scaffold.data.game.local.NewDatabase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -37,5 +30,7 @@ class OptionResultViewModel @Inject constructor(
             }
         }
     }
-    }
-    */
+}
+
+
+ */

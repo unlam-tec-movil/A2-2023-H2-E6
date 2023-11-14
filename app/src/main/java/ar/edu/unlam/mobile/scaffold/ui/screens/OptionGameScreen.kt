@@ -1,11 +1,8 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
 
-<<<<<<< Updated upstream
-import androidx.activity.ComponentActivity
+
 import androidx.compose.foundation.background
-=======
 import androidx.compose.foundation.border
->>>>>>> Stashed changes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,17 +23,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-<<<<<<< Updated upstream
 import androidx.compose.ui.graphics.Color
-=======
->>>>>>> Stashed changes
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
+import kotlinx.coroutines.delay
+import retrofit2.http.Body
 
 @Composable
 fun OptionGameScreen(
@@ -92,7 +87,6 @@ fun OptionGameScreen(
 }
 
 @Composable
-
 fun Body(
     viewModel: OptionGameViewModel,
     optionGame: OptionGame,
@@ -101,18 +95,20 @@ fun Body(
 ) {
 
     Card(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize()
+            .background(Color.DarkGray),
     ) {
         Column(
             modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
                 text = optionGame.question,
                 fontSize = 18.sp,
                 modifier = Modifier.padding(16.dp)
-                    .background(Color.Red) // Cambiar el fondo a negro
+                    .background(Color.Black)
+
             )
         }
         Spacer(modifier = Modifier.height(16.dp))
@@ -132,36 +128,34 @@ fun Body(
         Button(onClick = {
             viewModel.onNavigateToScreen1()
         }) {
-            Text(text = "Volver a la pantalla principal")
+            Text(text = "Volver a la pantalla principal",
+
+                )
+
+
         }
     }
 }
 
+
+
 @Composable
-<<<<<<< Updated upstream
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
-=======
-
-fun OptionsCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
-    val paddingModifier  = Modifier.padding(10.dp)
-
->>>>>>> Stashed changes
     Card(
+        modifier = Modifier.fillMaxWidth()
 
-        modifier = paddingModifier
-            .fillMaxWidth()
-            .clickable { onOptionSelected() }
-            .padding(10.dp),
+            .background(Color.Blue)
+            .clickable { onOptionSelected() },
 
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.Center,
         ) {
             Text(
                 text = answer,
-                modifier = paddingModifier,
                 fontSize = 16.sp,
+                color=Color.Cyan,
             )
         }
     }
