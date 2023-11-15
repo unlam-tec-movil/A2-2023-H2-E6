@@ -1,4 +1,4 @@
-/*package ar.edu.unlam.mobile.scaffold.ui.screens
+package ar.edu.unlam.mobile.scaffold.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -41,4 +41,4 @@ fun OptionResultScreen(
         }
     }
 }
-*/
+

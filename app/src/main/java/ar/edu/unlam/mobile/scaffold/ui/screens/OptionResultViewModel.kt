@@ -1,4 +1,4 @@
-/*package ar.edu.unlam.mobile.scaffold.ui.screens
+package ar.edu.unlam.mobile.scaffold.ui.screens
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
@@ -31,4 +31,5 @@ class OptionResultViewModel @Inject constructor(
         }
     }
 }
-*/
+
+
