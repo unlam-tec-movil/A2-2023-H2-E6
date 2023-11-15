@@ -6,11 +6,11 @@ import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
 import org.jetbrains.annotations.NotNull
 
 @Entity(tableName = "gameResult")
-data class GameResultEntity(
+abstract class GameResultEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    var id: Int,
     val gameResult: String,
-)
+) : List<GameResultEntity>
 
 fun GameResultEntity.toDomain() = GameResult(
     id = id,

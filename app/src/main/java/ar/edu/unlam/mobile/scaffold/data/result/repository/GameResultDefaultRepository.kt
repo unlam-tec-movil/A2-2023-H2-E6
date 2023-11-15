@@ -11,3 +11,10 @@ class GameResultDefaultRepository @Inject constructor(
     private val resultDao: ResultDao = database.resultDao()
 }
 
+/*
+@Database(entities = [GameResultEntity::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun resultDao(): ResultDao
+}
+
+ */
