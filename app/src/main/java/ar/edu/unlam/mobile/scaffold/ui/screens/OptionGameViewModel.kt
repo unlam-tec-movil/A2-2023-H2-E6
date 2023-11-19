@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
+import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResult
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -63,7 +64,7 @@ class OptionGameViewModel @Inject constructor(
             "Incorrecto la correcta era ${optionGame.answer.content}"
         }
 
-        // saveGameResult(gameResult)
+         saveGameResult(gameResult)
         if (optionGame.isCorrect(selectedOption)) {
             _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
         } else {
@@ -73,9 +74,9 @@ class OptionGameViewModel @Inject constructor(
 
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
-            val id = 0
-            // val gameResult = GameResult(gameResult = result, id = id)
-            // database.ResultDao().insert(gameResult) Todo, esto tiene que ir en el repo y ser consumido por el service
+            val id = 1
+         //    val gameResult = GameResult(gameResult = result, id = id)
+    //      database.resultDao().insert(gameResult)// Todo, esto tiene que ir en el repo y ser consumido por el service
         }
     }
 
