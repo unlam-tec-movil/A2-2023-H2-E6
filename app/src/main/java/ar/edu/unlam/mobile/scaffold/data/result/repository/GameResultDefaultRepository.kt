@@ -3,7 +3,6 @@ package ar.edu.unlam.mobile.scaffold.data.result.repository
 import androidx.room.Entity
 import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
 import ar.edu.unlam.mobile.scaffold.data.result.local.ResultDao
-import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResult
 import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResultEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,31 +13,17 @@ class GameResultDefaultRepository @Inject constructor(
     database: SwDatabase,
 ) : GameResultRepository {
     private val resultDao: ResultDao = database.resultDao()
-<<<<<<< HEAD
-    val allEntities: Flow<List<GameResultEntity>> = resultDao.getAllResults()
-   //pend fun insert(gameResult: GameResultEntity) {
-   //     ResultDao.insert(GameResultEntity)
-   // }
-    override fun getAllResults(): Flow<List<GameResultEntity>> {
-return flow{
-   resultDao
-
-    database.resultDao().insert(gameResult)
-}
-
-=======
     val allEntity: Flow<List<GameResultEntity>> = resultDao.getAllResults()
     override fun getAllResults(): Flow<List<GameResultEntity>> {
-       return flow{
-           resultDao
-       }
+        return flow{
+            resultDao
+        }
     }
 
     companion object {
         fun insertGameResult(result: String) {
 
         }
->>>>>>> 8eef56b09e3a977d7828466123ff29929ae78d0f
     }
 }
 
