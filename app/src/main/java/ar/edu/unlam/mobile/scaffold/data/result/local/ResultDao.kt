@@ -12,8 +12,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface ResultDao {
     @Insert
-    fun insert( gameResult: GameResultEntity)
-
+    suspend fun insert(gameResult: GameResultEntity)
 
     @Query("SELECT * FROM gameResult")
     fun getAllResults(): Flow<List<GameResultEntity>>
