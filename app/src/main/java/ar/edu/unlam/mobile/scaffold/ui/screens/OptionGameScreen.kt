@@ -50,7 +50,14 @@ fun OptionGameScreen(
 
     when (val gameOptionState = uiState.optionGameState) {
         is OptionGameUIState.Loading -> {
-            CircularProgressIndicator()
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ){
+                CircularProgressIndicator()
+            }
+
         }
 
         is OptionGameUIState.Success -> {

@@ -66,6 +66,7 @@ class MainActivity : ComponentActivity() {
 
                                 )
                         }
+                        /*
                         composable(
                             route = "home/{id}",
                             arguments = listOf(navArgument("id") { type = NavType.IntType }),
@@ -75,7 +76,9 @@ class MainActivity : ComponentActivity() {
                                 snackbarHostState = snackbarHostState,
                                 navController = navController
                             )
+
                         }
+                        */
                     }
                 }
             }

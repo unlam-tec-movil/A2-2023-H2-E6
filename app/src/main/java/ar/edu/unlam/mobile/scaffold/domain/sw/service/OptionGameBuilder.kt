@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class OptionGameBuilder @Inject constructor(private val rawDataRepo: RawDataRepository) : GameUseCase {
-    // Todo, si el content es de value "unkown" traerlo de nuevo
+
     override fun createGame(): Flow<OptionGame> {
         return flow {
             rawDataRepo.getRawData().collect {

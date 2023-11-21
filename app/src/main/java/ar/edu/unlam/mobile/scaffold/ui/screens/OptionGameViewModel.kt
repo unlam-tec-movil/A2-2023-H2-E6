@@ -76,7 +76,7 @@ class OptionGameViewModel @Inject constructor(
 
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
-            GameResultDefaultRepository.insertGameResult(result)
+      //      GameResultDefaultRepository.insertGameResult(result)
         }
     }
 

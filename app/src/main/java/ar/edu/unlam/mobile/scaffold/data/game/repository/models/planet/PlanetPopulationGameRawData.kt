@@ -15,7 +15,7 @@ class PlanetPopulationGameRawData(
     override var attributeValue: String,
 ) : RawData {
 
-    // TODO: Puede llega a coincidir con la opción verdadera
+
     override fun getOptions(size: Int): List<Option> {
         val options = mutableListOf<Option>()
         val random = Random()
