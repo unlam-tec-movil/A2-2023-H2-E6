@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Traerse un Planeta;
+:Pasar el planeta a la pregunta;
+if (Eleccion de pregunta) then
+    :Población;
+else
+    :Clima;
+endif
+:La pregunta devuelve 4 opciones, una verdadera;
+:El usuario elige la opcion;
+stop
+@enduml
