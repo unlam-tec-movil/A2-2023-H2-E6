@@ -1,7 +1,7 @@
 package ar.edu.unlam.mobile.scaffold.domain.sw.di
 
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
-import ar.edu.unlam.mobile.scaffold.domain.sw.service.OptionGameBuilder
+import ar.edu.unlam.mobile.scaffold.domain.sw.service.OptionResultBuilder
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 abstract class SwModule {
 
     @Binds
-    abstract fun bindsGameUseCase(optionGameBuilder: OptionGameBuilder): GameUseCase
+    abstract fun bindsGameUseCase(optionGameBuilder: OptionResultBuilder): GameUseCase
 }
