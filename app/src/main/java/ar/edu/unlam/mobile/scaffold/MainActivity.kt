@@ -19,7 +19,7 @@ import ar.edu.unlam.mobile.scaffold.ui.screens.OptionResultScreen
 import ar.edu.unlam.mobile.scaffold.ui.screens.ScreenOne
 import ar.edu.unlam.mobile.scaffold.ui.theme.MyApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
-// import ar.edu.unlam.mobile.scaffold.ui.screens.OptionResultScreen
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Suppress("ktlint:standard:trailing-comma-on-call-site")

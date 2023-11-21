@@ -1,5 +1,3 @@
-package ar.edu.unlam.mobile.scaffold.ui.screens
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -128,7 +126,7 @@ fun Body(
         }
         Spacer(modifier = Modifier.height(100.dp))
         LazyColumn(verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             items(count = optionGame.options.size) { index ->
                 AnswerCard(
@@ -157,25 +155,25 @@ fun Body(
 @Composable
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
 
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color.Blue)
-                .clickable { onOptionSelected() },
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.Blue)
+            .clickable { onOptionSelected() },
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(
-                modifier = Modifier.padding(16.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = answer,
-                    fontSize = 16.sp,
-                    color = Color.Black,
-                    textAlign = TextAlign.Center
-                )
-            }
+            Text(
+                text = answer,
+                fontSize = 16.sp,
+                color = Color.Black,
+                textAlign = TextAlign.Center
+            )
         }
+    }
 
 }
 

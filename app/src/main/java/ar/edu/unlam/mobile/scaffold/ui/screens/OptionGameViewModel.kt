@@ -1,6 +1,7 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
 
 import androidx.compose.runtime.Immutable
+import kotlin.experimental.ExperimentalTypeInference
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -73,30 +74,29 @@ class OptionGameViewModel @Inject constructor(
 
     fun validateGame(optionGame: OptionGame, selectedOption: Option) {
         if (optionGame.isCorrect(selectedOption)) {
-           gameResult = "Correcto"
-           _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
-           score += 1
-       }
+            gameResult = "Correcto"
+            _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
+            score += 1
+        }
         else {
-                vidas -= 1
-                gameResult = "Incorrecto la correcta era ${optionGame.answer.content}"
-                _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
+            vidas -= 1
+            gameResult = "Incorrecto la correcta era ${optionGame.answer.content}"
+            _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
             if(vidas == 0){
                 startGame = false
                 _uiState.value = GameUIState(OptionGameUIState.SetName)
-                }
             }
         }
+    }
 
     fun finishGame(name: String){
         updateUsername(name)
         saveGameResult(score.toString(), username)
     }
-
-    private fun saveGameResult(result: String, name: String) {
+      private fun saveGameResult(result: String, name: String) {
         viewModelScope.launch {
-            addUseCase(generarData(result, name))
-        }
+          addUseCase(generarData(result, name))
+       }
     }
 
     private fun generarData(score: String, name: String): GameResultEntity{
@@ -115,7 +115,7 @@ class OptionGameViewModel @Inject constructor(
         _navigateToScreen1.value = false
     }
     fun updateUsername(input: String){
-        username = input
+       username = input
     }
 
     fun getVidas(): Int{
