@@ -81,11 +81,11 @@ fun OptionGameScreen(
             }
         }
 
-        is OptionGameUIState.SetName -> {
+//        is OptionGameUIState.SetName -> {
 
-            SetName(viewModel = viewModel)
+ //           SetName(viewModel = viewModel)
 
-        }
+//        }
 
     }
 }
@@ -174,9 +174,9 @@ fun SetName(viewModel: OptionGameViewModel){
 
     Column {
         Text("Hola")
-        TextField(value = viewModel.username, onValueChange = { username -> viewModel.updateUsername(username)})
+     //   TextField(value = viewModel.username, onValueChange = { username -> viewModel.updateUsername(username)})
         Button(onClick = {
-            viewModel.finishGame(viewModel.username)
+    //        viewModel.finishGame(viewModel.username)
             viewModel.onNavigateToScreen1()
             viewModel.onNavigateToScreen1() }) {
             Text(text = "Chau")

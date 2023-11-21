@@ -7,6 +7,6 @@ import javax.inject.Inject
 class AddUseCase @Inject constructor(
     private val repository: GameResultRepository
 ){
-   suspend operator fun invoke (result: GameResultEntity) = repository.insert(result)
+  // suspend operator fun invoke (result: GameResultEntity) = repository.insert(result)
 
 }
