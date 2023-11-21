@@ -15,6 +15,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -79,6 +80,13 @@ fun OptionGameScreen(
                 snackbarHostState.showSnackbar(gameOptionState.message)
             }
         }
+
+        is OptionGameUIState.SetName -> {
+
+            SetName(viewModel = viewModel)
+
+        }
+
     }
 }
 
@@ -91,7 +99,8 @@ fun Body(
 ) {
 
     Card(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier
+            .fillMaxSize()
             .background(Color.DarkGray),
     ) {
         Column(
@@ -102,7 +111,8 @@ fun Body(
             Text(
                 text = optionGame.question,
                 fontSize = 18.sp,
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier
+                    .padding(16.dp)
                     .background(Color.Black)
 
             )
@@ -135,11 +145,13 @@ fun Body(
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
 
     Card(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .background(Color.Blue)
     ) {
         Card(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
                 .background(Color.Blue)
                 .clickable { onOptionSelected() },
         ) {
@@ -156,3 +168,21 @@ fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit
         }
     }
 }
+
+@Composable
+fun SetName(viewModel: OptionGameViewModel){
+
+    Column {
+        Text("Hola")
+        TextField(value = viewModel.username, onValueChange = { username -> viewModel.updateUsername(username)})
+        Button(onClick = {
+            viewModel.finishGame(viewModel.username)
+            viewModel.onNavigateToScreen1()
+            viewModel.onNavigateToScreen1() }) {
+            Text(text = "Chau")
+        }
+    }
+
+}
+
+

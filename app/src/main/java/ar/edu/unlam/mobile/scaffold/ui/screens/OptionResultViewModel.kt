@@ -1,4 +1,5 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
@@ -22,6 +23,7 @@ class OptionResultViewModel @Inject constructor(
 
     val gameResults: MutableStateFlow<List<GameResultEntity>> get() = _gameResults
 
+
     init {
         loadGameResults()
     }
@@ -33,18 +35,17 @@ class OptionResultViewModel @Inject constructor(
             }
         }
     }
+
+    private val _navigateToScreen1 = mutableStateOf(false)
+    val navigateToScreen1: Boolean
+        get() = _navigateToScreen1.value
+
+    fun onNavigateToScreen1() {
+        _navigateToScreen1.value = true
+    }
+
+    fun onNavigationHandled() {
+        _navigateToScreen1.value = false
+    }
+
 }
-/*
-import kotlinx.coroutines.flow.*
-
-fun main() {
-    val myFlow: Flow<Int> = flowOf(1, 2, 3)
-
-    // Example 1: Using stateIn with CoroutineScope
-    val stateFlow1 = myFlow.stateIn(GlobalScope)
-
-    // Example 2: Using stateIn with additional parameters
-    val stateFlow2 = myFlow.stateIn(GlobalScope, SharingStarted.WhileSubscribed(), initialValue = 0
- */
-
-

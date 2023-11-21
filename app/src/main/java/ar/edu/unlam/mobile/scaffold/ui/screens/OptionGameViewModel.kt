@@ -1,7 +1,9 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
 
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
@@ -21,6 +23,7 @@ import javax.inject.Inject
 sealed interface OptionGameUIState {
     data class Success(val optionGame: OptionGame) : OptionGameUIState
     object Loading : OptionGameUIState
+    object SetName: OptionGameUIState
     data class Error(val message: String) : OptionGameUIState
     data class Correct(val message: String) : OptionGameUIState
     data class Wrong(val message: String) : OptionGameUIState
@@ -41,20 +44,35 @@ class OptionGameViewModel @Inject constructor(
         GameUIState(_optionGameState.value),
     )
 
+    var username by mutableStateOf("")
+        private set
+
+    var startGame by mutableStateOf(true)
+        private set
+
+    var finishGame by mutableStateOf(false)
+        private set
+
     val uiState = _uiState.asStateFlow()
 
     private var gameResult: String = ""
-    var vidas: Int = 3
-    var score: Int = 0
+    private var vidas: Int = 4
+    private var score: Int = 0
 
     init {
         getNewGame()
     }
 
+    fun setName(){
+
+    }
+
     fun getNewGame() {
         viewModelScope.launch {
-            game.createGame().collect {
-                _uiState.value = GameUIState(OptionGameUIState.Success(it))
+            if(startGame) {
+                game.createGame().collect {
+                    _uiState.value = GameUIState(OptionGameUIState.Success(it))
+                }
             }
         }
     }
@@ -70,34 +88,25 @@ class OptionGameViewModel @Inject constructor(
                 gameResult = "Incorrecto la correcta era ${optionGame.answer.content}"
                 _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
             if(vidas == 0){
-                saveGameResult(score.toString())
-                onNavigateToScreen1()
+                startGame = false
+                _uiState.value = GameUIState(OptionGameUIState.SetName)
                 }
             }
         }
-    /*else {
-        gameResult = score.toString()
-        saveGameResult(gameResult)
-        onNavigateToScreen1()
+
+    fun finishGame(name: String){
+        updateUsername(name)
+        saveGameResult(score.toString(), username)
     }
 
-
-     saveGameResult(gameResult)
-    if (optionGame.isCorrect(selectedOption)) {
-        _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
-    } else {
-        _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
-    }*/
-
-
-    private fun saveGameResult(result: String) {
+    private fun saveGameResult(result: String, name: String) {
         viewModelScope.launch {
-            addUseCase(generarData(result))
+            addUseCase(generarData(result, name))
         }
     }
 
-    private fun generarData(score: String): GameResultEntity{
-        return GameResultEntity(gameResult = score)
+    private fun generarData(score: String, name: String): GameResultEntity{
+        return GameResultEntity(gameResult = score, name = name)
     }
 
     private val _navigateToScreen1 = mutableStateOf(false)
@@ -110,5 +119,8 @@ class OptionGameViewModel @Inject constructor(
 
     fun onNavigationHandled() {
         _navigateToScreen1.value = false
+    }
+    fun updateUsername(input: String){
+        username = input
     }
 }

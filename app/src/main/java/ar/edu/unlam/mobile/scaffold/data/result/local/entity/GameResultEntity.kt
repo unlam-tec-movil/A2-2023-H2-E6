@@ -11,6 +11,8 @@ data class GameResultEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Int = 0,
+    @ColumnInfo(name = "nombre")
+    var name: String = "",
     @ColumnInfo(name = "gameResult")
     val gameResult: String
     //val size: Int,
