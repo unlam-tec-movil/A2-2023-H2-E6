@@ -1,4 +1,5 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
@@ -31,6 +32,16 @@ class OptionResultViewModel @Inject constructor(
                 _gameResults.value=results
             }
         }
+    }
+    private val _navigateToScreen1 = mutableStateOf(false)
+    val navigateToScreen1: Boolean
+        get() = _navigateToScreen1.value
+
+    fun onNavigateToScreen1() {
+        _navigateToScreen1.value = true
+    }
+    fun onNavigationHandled() {
+        _navigateToScreen1.value = false
     }
 }
 /*
