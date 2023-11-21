@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -26,7 +27,12 @@ import androidx.navigation.compose.rememberNavController
 import ar.edu.unlam.mobile.scaffold.R
 
 @Composable
-fun ScreenOne(modifier: Modifier.Companion = Modifier, navController: NavHostController, viewModel: ScreenOneViewModel = hiltViewModel()) {
+fun ScreenOne(
+    modifier: Modifier = Modifier,
+    navController: NavHostController,
+    snackbarHostState: SnackbarHostState,
+    viewModel: ScreenOneViewModel = hiltViewModel(),
+) {
     val controller = rememberNavController()
     val backgroundImageRes = painterResource(id = R.drawable.fondo_estrellas)
     val backgroundModifier = Modifier
@@ -36,20 +42,20 @@ fun ScreenOne(modifier: Modifier.Companion = Modifier, navController: NavHostCon
     val buttonModifier = Modifier
         .padding(16.dp)
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
     ) {
         Image(
             painter = backgroundImageRes,
             contentDescription = null,
             modifier = backgroundModifier,
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Crop,
         )
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp),
             verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
                 text = "Bienvenido A La Trivia De Star Wars",
@@ -59,21 +65,31 @@ fun ScreenOne(modifier: Modifier.Companion = Modifier, navController: NavHostCon
                     .size(200.dp)
                     .padding(16.dp),
                 color = Color.White,
-                fontSize = 24.sp
+                fontSize = 24.sp,
             )
             Button(
                 onClick = {
                     navController.navigate("segundo/1") // Navega a SecondScreen con un ID
                 },
-                modifier = buttonModifier
+                modifier = buttonModifier,
             ) {
                 Text(text = "Iniciar Juego")
             }
             Button(
                 onClick = {
+                    navController.navigate("resultado/2") // resultasdo
+
+                    navController.navigate("resultado/1") // Navega a SecondScreen con un ID
+                },
+                modifier = buttonModifier,
+            ) {
+                Text(text = "Resultado")
+            }
+            Button(
+                onClick = {
                     System.exit(0)
                 },
-                modifier = buttonModifier
+                modifier = buttonModifier,
             ) {
                 Text(text = "Salir del Juego")
             }
