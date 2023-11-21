@@ -1,15 +1,12 @@
 package ar.edu.unlam.mobile.scaffold.data.result.local
 
-import android.telephony.VisualVoicemailSmsFilterSettings
 import androidx.room.Dao
-import androidx.room.Entity
 import androidx.room.Insert
 import androidx.room.Query
 import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResultEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-
 interface ResultDao {
     @Insert
     suspend fun insert(gameResult: GameResultEntity)
@@ -17,4 +14,3 @@ interface ResultDao {
     @Query("SELECT * FROM gameResult")
     fun getAllResults(): Flow<List<GameResultEntity>>
 }
-
