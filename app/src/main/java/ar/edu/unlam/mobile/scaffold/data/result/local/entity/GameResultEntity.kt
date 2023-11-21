@@ -14,7 +14,8 @@ data class GameResultEntity(
 data class GameResult(
     val id: Int,
     val gameResult: String,
-    val size: Int
+
+
 )
 
 fun GameResultEntity.toDomain() = GameResult(
