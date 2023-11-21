@@ -27,6 +27,7 @@ sealed interface OptionGameUIState {
     data class Error(val message: String) : OptionGameUIState
     data class Correct(val message: String) : OptionGameUIState
     data class Wrong(val message: String) : OptionGameUIState
+
 }
 
 data class GameUIState(
@@ -50,9 +51,6 @@ class OptionGameViewModel @Inject constructor(
     var startGame by mutableStateOf(true)
         private set
 
-    var finishGame by mutableStateOf(false)
-        private set
-
     val uiState = _uiState.asStateFlow()
 
     private var gameResult: String = ""
@@ -61,10 +59,6 @@ class OptionGameViewModel @Inject constructor(
 
     init {
         getNewGame()
-    }
-
-    fun setName(){
-
     }
 
     fun getNewGame() {
@@ -122,5 +116,9 @@ class OptionGameViewModel @Inject constructor(
     }
     fun updateUsername(input: String){
         username = input
+    }
+
+    fun getVidas(): Int{
+        return vidas
     }
 }
