@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
-import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResult
+import ar.edu.unlam.mobile.scaffold.data.game.use_cases.AddUseCase
+import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResultEntity
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -31,12 +32,11 @@ data class GameUIState(
 
 @HiltViewModel
 class OptionGameViewModel @Inject constructor(
-
+    private val addUseCase: AddUseCase,
     private val game: GameUseCase,
 // private val database: SwDatabase
 ) : ViewModel() {
     private val _optionGameState = mutableStateOf(OptionGameUIState.Loading)
-
     private val _uiState = MutableStateFlow(
         GameUIState(_optionGameState.value),
     )
@@ -44,6 +44,8 @@ class OptionGameViewModel @Inject constructor(
     val uiState = _uiState.asStateFlow()
 
     private var gameResult: String = ""
+    var vidas: Int = 3
+    var score: Int = 0
 
     init {
         getNewGame()
@@ -58,26 +60,44 @@ class OptionGameViewModel @Inject constructor(
     }
 
     fun validateGame(optionGame: OptionGame, selectedOption: Option) {
-        gameResult = if (optionGame.isCorrect(selectedOption)) {
-            "Correcto"
-        } else {
-            "Incorrecto la correcta era ${optionGame.answer.content}"
-        }
-
-         saveGameResult(gameResult)
         if (optionGame.isCorrect(selectedOption)) {
-            _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
-        } else {
-            _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
+           gameResult = "Correcto"
+           _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
+           score += 1
+       }
+        else {
+                vidas -= 1
+                gameResult = "Incorrecto la correcta era ${optionGame.answer.content}"
+                _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
+            if(vidas == 0){
+                saveGameResult(score.toString())
+                onNavigateToScreen1()
+                }
+            }
         }
+    /*else {
+        gameResult = score.toString()
+        saveGameResult(gameResult)
+        onNavigateToScreen1()
     }
+
+
+     saveGameResult(gameResult)
+    if (optionGame.isCorrect(selectedOption)) {
+        _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
+    } else {
+        _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
+    }*/
+
 
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
-            val id = 1
-         //    val gameResult = GameResult(gameResult = result, id = id)
-    //      database.resultDao().insert(gameResult)// Todo, esto tiene que ir en el repo y ser consumido por el service
+            addUseCase(generarData(result))
         }
+    }
+
+    private fun generarData(score: String): GameResultEntity{
+        return GameResultEntity(gameResult = score)
     }
 
     private val _navigateToScreen1 = mutableStateOf(false)

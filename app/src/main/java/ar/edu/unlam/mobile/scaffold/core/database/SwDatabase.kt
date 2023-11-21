@@ -11,7 +11,6 @@ import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
     version = 1
 )
 public abstract class SwDatabase : RoomDatabase() {
-
     public abstract fun resultDao(): ResultDao
 }
 /*

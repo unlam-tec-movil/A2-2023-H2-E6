@@ -6,13 +6,14 @@ import ar.edu.unlam.mobile.scaffold.data.result.local.ResultDao
 import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResultEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
-@Entity
 class GameResultDefaultRepository @Inject constructor(
-    database: SwDatabase,
+    private val resultDao: ResultDao,
 ) : GameResultRepository {
-    private val resultDao: ResultDao = database.resultDao()
+    override suspend fun insert(gameResult: GameResultEntity) {
+        resultDao.insert(gameResult)
+    }
     override fun getAllResults(): Flow<List<GameResultEntity>> {
-        TODO("Not yet implemented")
+        return resultDao.getAllResults()
     }
 }
 

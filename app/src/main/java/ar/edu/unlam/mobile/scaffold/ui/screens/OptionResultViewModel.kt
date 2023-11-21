@@ -2,6 +2,7 @@ package ar.edu.unlam.mobile.scaffold.ui.screens
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.core.database.SwDatabase
+import ar.edu.unlam.mobile.scaffold.data.game.use_cases.GetAllGamesUseCase
 import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResultEntity
 import ar.edu.unlam.mobile.scaffold.data.result.model.GameResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class OptionResultViewModel @Inject constructor(
-    private val database: SwDatabase
+    private val getAllGamesUseCase: GetAllGamesUseCase
 ): ViewModel() {
 
     private val _gameResults: MutableStateFlow<List<GameResultEntity>> = MutableStateFlow(emptyList())
@@ -27,7 +28,7 @@ class OptionResultViewModel @Inject constructor(
 
     private fun loadGameResults() {
         viewModelScope.launch {
-            database.resultDao().getAllResults().stateIn(viewModelScope).collect { results ->
+            getAllGamesUseCase().stateIn(viewModelScope).collect { results ->
                 _gameResults.value=results
             }
         }
