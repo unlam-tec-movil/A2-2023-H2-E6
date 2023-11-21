@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -29,6 +28,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
+import ar.edu.unlam.mobile.scaffold.ui.screens.GameUIState
+import ar.edu.unlam.mobile.scaffold.ui.screens.OptionGameUIState
+import ar.edu.unlam.mobile.scaffold.ui.screens.OptionGameViewModel
 
 @Composable
 fun OptionGameScreen(
@@ -55,10 +57,9 @@ fun OptionGameScreen(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
-            ){
+            ) {
                 CircularProgressIndicator()
             }
-
         }
 
         is OptionGameUIState.Success -> {
@@ -89,11 +90,8 @@ fun OptionGameScreen(
         }
 
         is OptionGameUIState.SetName -> {
-
             SetName(viewModel = viewModel)
-
         }
-
     }
 }
 
@@ -104,7 +102,6 @@ fun Body(
     onAnswerSelected: (selected: Option) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-
     Card(
         modifier = modifier
             .fillMaxSize()
@@ -121,12 +118,13 @@ fun Body(
                 color = Color.White,
                 modifier = Modifier
                     .padding(30.dp, 30.dp)
-                    .background(Color.Black)
+                    .background(Color.Black),
             )
         }
         Spacer(modifier = Modifier.height(100.dp))
-        LazyColumn(verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+        LazyColumn(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             items(count = optionGame.options.size) { index ->
                 AnswerCard(
@@ -134,7 +132,7 @@ fun Body(
                     isSelected = false,
                     onOptionSelected = {
                         onAnswerSelected(optionGame.options[index])
-                    }
+                    },
                 )
                 Spacer(modifier = Modifier.height(16.dp))
             }
@@ -152,9 +150,9 @@ fun Body(
         }
     }
 }
+
 @Composable
 fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit) {
-
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -164,38 +162,36 @@ fun AnswerCard(answer: String, isSelected: Boolean, onOptionSelected: () -> Unit
         Column(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
                 text = answer,
                 fontSize = 16.sp,
                 color = Color.Black,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
             )
         }
     }
-
 }
 
 @Composable
-fun SetName(viewModel: OptionGameViewModel){
-
-    Column(modifier = Modifier.fillMaxWidth(),
+fun SetName(viewModel: OptionGameViewModel) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,) {
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
         Spacer(modifier = Modifier.height(30.dp))
         Text("Juego finalizado :(", textAlign = TextAlign.Center)
         Spacer(modifier = Modifier.height(16.dp))
-        TextField(value = viewModel.username, onValueChange = { username -> viewModel.updateUsername(username)})
+        TextField(value = viewModel.username, onValueChange = { username -> viewModel.updateUsername(username) })
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
             viewModel.finishGame(viewModel.username)
             viewModel.onNavigateToScreen1()
-            viewModel.onNavigateToScreen1() }) {
+            viewModel.onNavigateToScreen1()
+        }) {
             Text(text = "Salir")
         }
     }
-
 }
-
-

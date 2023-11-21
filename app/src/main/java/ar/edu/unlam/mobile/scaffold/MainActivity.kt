@@ -1,5 +1,6 @@
 package ar.edu.unlam.mobile.scaffold
 
+import OptionGameScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,7 +15,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import ar.edu.unlam.mobile.scaffold.ui.screens.OptionGameScreen
 import ar.edu.unlam.mobile.scaffold.ui.screens.OptionResultScreen
 import ar.edu.unlam.mobile.scaffold.ui.screens.ScreenOne
 import ar.edu.unlam.mobile.scaffold.ui.theme.MyApplicationTheme
@@ -64,7 +64,7 @@ class MainActivity : ComponentActivity() {
                                 // modifier = Modifier.padding(paddingValues),
                                 navController = navController,
 
-                                )
+                            )
                         }
                         composable(
                             route = "home/{id}",
@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
                             val id = entry.arguments?.getInt("id") ?: 1
                             ScreenOne(
                                 snackbarHostState = snackbarHostState,
-                                navController = navController
+                                navController = navController,
                             )
                         }
                     }
