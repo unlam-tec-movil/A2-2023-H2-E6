@@ -38,6 +38,7 @@ fun PhotoCard(text: String, title: String, imageUrl: String, action: () -> Unit,
                         .background(color = Color.LightGray)
                         .fillMaxWidth()
                         .height(194.dp),
+
                 )
             }
             Row(
@@ -48,6 +49,7 @@ fun PhotoCard(text: String, title: String, imageUrl: String, action: () -> Unit,
                     Column {
                         Text(
                             text = title,
+                            color = Color.Red,
                             style = MaterialTheme.typography.headlineSmall,
                         )
                     }

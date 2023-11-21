@@ -1,6 +1,6 @@
-package ar.edu.unlam.mobile.scaffold.data.Sw.di
+package ar.edu.unlam.mobile.scaffold.data.sw.di
 
-import ar.edu.unlam.mobile.scaffold.data.Sw.network.SwApi
+import ar.edu.unlam.mobile.scaffold.data.sw.network.SwApi
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
