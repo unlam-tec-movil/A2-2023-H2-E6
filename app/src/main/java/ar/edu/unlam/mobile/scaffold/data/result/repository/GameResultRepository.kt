@@ -6,5 +6,7 @@ import kotlinx.coroutines.flow.Flow
 interface GameResultRepository{
 
     fun getAllResults(): Flow<List<GameResultEntity>>
-}
+
+    }
+
 

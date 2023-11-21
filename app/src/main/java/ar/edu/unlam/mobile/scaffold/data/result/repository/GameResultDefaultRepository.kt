@@ -10,9 +10,11 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 @Entity
 class GameResultDefaultRepository @Inject constructor(
+
     database: SwDatabase,
 ) : GameResultRepository {
     private val resultDao: ResultDao = database.resultDao()
+<<<<<<< HEAD
     val allEntities: Flow<List<GameResultEntity>> = resultDao.getAllResults()
    //pend fun insert(gameResult: GameResultEntity) {
    //     ResultDao.insert(GameResultEntity)
@@ -24,6 +26,19 @@ return flow{
     database.resultDao().insert(gameResult)
 }
 
+=======
+    val allEntity: Flow<List<GameResultEntity>> = resultDao.getAllResults()
+    override fun getAllResults(): Flow<List<GameResultEntity>> {
+       return flow{
+           resultDao
+       }
+    }
+
+    companion object {
+        fun insertGameResult(result: String) {
+
+        }
+>>>>>>> 8eef56b09e3a977d7828466123ff29929ae78d0f
     }
 }
 

@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.OptionGame
 import ar.edu.unlam.mobile.scaffold.data.result.local.entity.GameResult
+import ar.edu.unlam.mobile.scaffold.data.result.repository.GameResultDefaultRepository
+import ar.edu.unlam.mobile.scaffold.data.result.repository.GameResultRepository
 import ar.edu.unlam.mobile.scaffold.domain.sw.service.GameUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -57,21 +59,28 @@ class OptionGameViewModel @Inject constructor(
         }
     }
 
-    fun validateGame(optionGame: OptionGame, selectedOption: Option) {
-        gameResult = if (optionGame.isCorrect(selectedOption)) {
-            "Correcto"
-        } else {
-            "Incorrecto la correcta era ${optionGame.answer.content}"
+        fun validateGame(optionGame: OptionGame, selectedOption: Option) {
+            val gameResult: String = if (optionGame.isCorrect(selectedOption)) {
+                "Correcto"
+            } else {
+                "Incorrecto la correcta era ${optionGame.answer.content}"
+            }
+
+            saveGameResult(gameResult)
+            if (optionGame.isCorrect(selectedOption)) {
+                _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
+            } else {
+                _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
+            }
         }
 
-         saveGameResult(gameResult)
-        if (optionGame.isCorrect(selectedOption)) {
-            _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
-        } else {
-            _uiState.value = GameUIState(OptionGameUIState.Wrong(gameResult))
+        private fun saveGameResult(result: String) {
+            viewModelScope.launch {
+                GameResultDefaultRepository.insertGameResult(result)
+            }
         }
-    }
 
+<<<<<<< HEAD
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
             val id = 1
@@ -79,6 +88,8 @@ class OptionGameViewModel @Inject constructor(
          GameResult.insert(gameResult)// Todo, esto tiene que ir en el repo y ser consumido por el service
         }
     }
+=======
+>>>>>>> 8eef56b09e3a977d7828466123ff29929ae78d0f
 
     private val _navigateToScreen1 = mutableStateOf(false)
     val navigateToScreen1: Boolean
