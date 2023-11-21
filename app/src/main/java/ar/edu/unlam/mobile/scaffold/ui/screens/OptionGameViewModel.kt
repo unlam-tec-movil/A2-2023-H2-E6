@@ -1,7 +1,9 @@
 package ar.edu.unlam.mobile.scaffold.ui.screens
 
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ar.edu.unlam.mobile.scaffold.data.game.repository.models.Option
@@ -60,13 +62,13 @@ class OptionGameViewModel @Inject constructor(
     }
 
     fun validateGame(optionGame: OptionGame, selectedOption: Option) {
-        val gameResult: String = if (optionGame.isCorrect(selectedOption)) {
+        gameResult = if (optionGame.isCorrect(selectedOption)) {
             "Correcto"
         } else {
             "Incorrecto la correcta era ${optionGame.answer.content}"
         }
 
-        saveGameResult(gameResult)
+         saveGameResult(gameResult)
         if (optionGame.isCorrect(selectedOption)) {
             _uiState.value = GameUIState(OptionGameUIState.Correct(gameResult))
         } else {
@@ -76,10 +78,11 @@ class OptionGameViewModel @Inject constructor(
 
     private fun saveGameResult(result: String) {
         viewModelScope.launch {
-            GameResultDefaultRepository.insertGameResult(result)
+            val id = 1
+         //    val gameResult = GameResult(gameResult = result, id = id)
+    //      database.resultDao().insert(gameResult)// Todo, esto tiene que ir en el repo y ser consumido por el service
         }
     }
-
 
     private val _navigateToScreen1 = mutableStateOf(false)
     val navigateToScreen1: Boolean
