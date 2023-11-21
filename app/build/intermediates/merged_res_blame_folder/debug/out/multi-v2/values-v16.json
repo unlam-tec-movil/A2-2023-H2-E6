@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "ar.edu.unlam.mobile.scaffold.app-mergeDebugResources-58:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Damian\\.gradle\\caches\\transforms-3\\1d4d04f6c60efdcdb47b4bac70d2bf50\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

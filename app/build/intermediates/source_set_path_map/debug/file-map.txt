@@ -1,0 +1,62 @@
+ar.edu.unlam.mobile.scaffold.app-appcompat-resources-1.6.1-0 C:\Users\Damian\.gradle\caches\transforms-3\03e7af557b830aef52273d2958c3c519\transformed\appcompat-resources-1.6.1\res
+ar.edu.unlam.mobile.scaffold.app-animation-core-release-1 C:\Users\Damian\.gradle\caches\transforms-3\048cd69c2f9ab6dd8d6b0b1bf7f84ec2\transformed\animation-core-release\res
+ar.edu.unlam.mobile.scaffold.app-navigation-common-2.7.1-2 C:\Users\Damian\.gradle\caches\transforms-3\053e233c79b94e5efac0dc84c47b5fb4\transformed\navigation-common-2.7.1\res
+ar.edu.unlam.mobile.scaffold.app-foundation-layout-release-3 C:\Users\Damian\.gradle\caches\transforms-3\0adbe909feff48664cf95fc0d760a1c9\transformed\foundation-layout-release\res
+ar.edu.unlam.mobile.scaffold.app-room-runtime-2.6.0-4 C:\Users\Damian\.gradle\caches\transforms-3\0fc03cbd2a4e8a922532ad2f329fa97b\transformed\room-runtime-2.6.0\res
+ar.edu.unlam.mobile.scaffold.app-ui-text-release-5 C:\Users\Damian\.gradle\caches\transforms-3\17230b03bde2d4a5a4812d42171fc866\transformed\ui-text-release\res
+ar.edu.unlam.mobile.scaffold.app-emoji2-1.4.0-6 C:\Users\Damian\.gradle\caches\transforms-3\185abfb23907493bdb9905b213d7c6b6\transformed\emoji2-1.4.0\res
+ar.edu.unlam.mobile.scaffold.app-core-1.10.1-7 C:\Users\Damian\.gradle\caches\transforms-3\1d4d04f6c60efdcdb47b4bac70d2bf50\transformed\core-1.10.1\res
+ar.edu.unlam.mobile.scaffold.app-animation-release-8 C:\Users\Damian\.gradle\caches\transforms-3\20e6a866af2dea137f5cdc9a4ec4e97f\transformed\animation-release\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-process-2.6.1-9 C:\Users\Damian\.gradle\caches\transforms-3\286ae37d1075670659371ae487f304d9\transformed\lifecycle-process-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-viewmodel-compose-2.6.1-10 C:\Users\Damian\.gradle\caches\transforms-3\3b02a3216c207cbdf10823548e0234ea\transformed\lifecycle-viewmodel-compose-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-savedstate-ktx-1.2.1-11 C:\Users\Damian\.gradle\caches\transforms-3\3e1d8505fe4c5d49d66f7e72c038e1d6\transformed\savedstate-ktx-1.2.1\res
+ar.edu.unlam.mobile.scaffold.app-material-ripple-release-12 C:\Users\Damian\.gradle\caches\transforms-3\409f07a51d24496b36767c67226f4c31\transformed\material-ripple-release\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-runtime-ktx-2.6.1-13 C:\Users\Damian\.gradle\caches\transforms-3\46ede207320566ad52b197c21965c397\transformed\lifecycle-runtime-ktx-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-navigation-common-ktx-2.7.1-14 C:\Users\Damian\.gradle\caches\transforms-3\47613d9eecc25e9f3884948a7052fe3b\transformed\navigation-common-ktx-2.7.1\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-runtime-2.6.1-15 C:\Users\Damian\.gradle\caches\transforms-3\48d4a786251a774ce6dc9d470ac4e32c\transformed\lifecycle-runtime-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-annotation-experimental-1.3.0-16 C:\Users\Damian\.gradle\caches\transforms-3\4ecb87cfd59fe619dba7e952ff9677cc\transformed\annotation-experimental-1.3.0\res
+ar.edu.unlam.mobile.scaffold.app-activity-1.7.2-17 C:\Users\Damian\.gradle\caches\transforms-3\515941a91a6d46b1d250c5229d03cee2\transformed\activity-1.7.2\res
+ar.edu.unlam.mobile.scaffold.app-runtime-release-18 C:\Users\Damian\.gradle\caches\transforms-3\53883c1c5098470266643f30c816d5e5\transformed\runtime-release\res
+ar.edu.unlam.mobile.scaffold.app-navigation-runtime-2.7.1-19 C:\Users\Damian\.gradle\caches\transforms-3\5b2ccd650e3103fa51bf19700b0130d6\transformed\navigation-runtime-2.7.1\res
+ar.edu.unlam.mobile.scaffold.app-fragment-1.5.1-20 C:\Users\Damian\.gradle\caches\transforms-3\5e74feb7f0572867fd438de67af3f8f8\transformed\fragment-1.5.1\res
+ar.edu.unlam.mobile.scaffold.app-profileinstaller-1.3.1-21 C:\Users\Damian\.gradle\caches\transforms-3\5e9eb470eb3c080fdafa143a871e811c\transformed\profileinstaller-1.3.1\res
+ar.edu.unlam.mobile.scaffold.app-sqlite-2.4.0-22 C:\Users\Damian\.gradle\caches\transforms-3\603142cd528a49484141e7fa0181b7f9\transformed\sqlite-2.4.0\res
+ar.edu.unlam.mobile.scaffold.app-hilt-navigation-1.0.0-23 C:\Users\Damian\.gradle\caches\transforms-3\69d0681c317ff5d02c8f97d8ce2a919a\transformed\hilt-navigation-1.0.0\res
+ar.edu.unlam.mobile.scaffold.app-core-ktx-1.10.1-24 C:\Users\Damian\.gradle\caches\transforms-3\75a4058eb6c4ce5814c40365dcfeb863\transformed\core-ktx-1.10.1\res
+ar.edu.unlam.mobile.scaffold.app-material-icons-core-release-25 C:\Users\Damian\.gradle\caches\transforms-3\77384713cf5b094035692c233108890f\transformed\material-icons-core-release\res
+ar.edu.unlam.mobile.scaffold.app-navigation-runtime-ktx-2.7.1-26 C:\Users\Damian\.gradle\caches\transforms-3\7c7fcd4817440b0a7b53dbe378795bf8\transformed\navigation-runtime-ktx-2.7.1\res
+ar.edu.unlam.mobile.scaffold.app-material-release-27 C:\Users\Damian\.gradle\caches\transforms-3\87e9b22968aa3a5ff3cc289e6e78afb2\transformed\material-release\res
+ar.edu.unlam.mobile.scaffold.app-ui-geometry-release-28 C:\Users\Damian\.gradle\caches\transforms-3\8b6a8d2debb4f816a7fa78f23131137b\transformed\ui-geometry-release\res
+ar.edu.unlam.mobile.scaffold.app-room-ktx-2.6.0-29 C:\Users\Damian\.gradle\caches\transforms-3\8ea61295fdb2d122700f986d3c17949b\transformed\room-ktx-2.6.0\res
+ar.edu.unlam.mobile.scaffold.app-coil-base-2.4.0-30 C:\Users\Damian\.gradle\caches\transforms-3\92744edc957e0db6624313ccff326e3c\transformed\coil-base-2.4.0\res
+ar.edu.unlam.mobile.scaffold.app-ui-tooling-data-release-31 C:\Users\Damian\.gradle\caches\transforms-3\9324999e40201cd9890262c250d5fd53\transformed\ui-tooling-data-release\res
+ar.edu.unlam.mobile.scaffold.app-ui-release-32 C:\Users\Damian\.gradle\caches\transforms-3\98ad60e372fbcd44ff71066a2abbbfce\transformed\ui-release\res
+ar.edu.unlam.mobile.scaffold.app-ui-util-release-33 C:\Users\Damian\.gradle\caches\transforms-3\9e9c0487dcae02278b4ea7e56e5425c0\transformed\ui-util-release\res
+ar.edu.unlam.mobile.scaffold.app-activity-compose-1.7.2-34 C:\Users\Damian\.gradle\caches\transforms-3\a08aaf558cbf361bce11ce90cfbcb7d8\transformed\activity-compose-1.7.2\res
+ar.edu.unlam.mobile.scaffold.app-ui-unit-release-35 C:\Users\Damian\.gradle\caches\transforms-3\abdf05abd4aa477cd40353e24a7ff821\transformed\ui-unit-release\res
+ar.edu.unlam.mobile.scaffold.app-sqlite-framework-2.4.0-36 C:\Users\Damian\.gradle\caches\transforms-3\adc3044fafad511cc7ebd495de4316d8\transformed\sqlite-framework-2.4.0\res
+ar.edu.unlam.mobile.scaffold.app-navigation-compose-2.7.1-37 C:\Users\Damian\.gradle\caches\transforms-3\af6cc6ea82310d68a858e0f907c0312c\transformed\navigation-compose-2.7.1\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-livedata-core-2.6.1-38 C:\Users\Damian\.gradle\caches\transforms-3\b2a6b4ede893b48712583fd552c78af6\transformed\lifecycle-livedata-core-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-activity-ktx-1.7.2-39 C:\Users\Damian\.gradle\caches\transforms-3\ba8c378bdc64688855a7af5ec03e44df\transformed\activity-ktx-1.7.2\res
+ar.edu.unlam.mobile.scaffold.app-foundation-release-40 C:\Users\Damian\.gradle\caches\transforms-3\c611e31514aa252c56e9534063340293\transformed\foundation-release\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-livedata-2.6.1-41 C:\Users\Damian\.gradle\caches\transforms-3\c834f35ffc94c6513c0a276f4f6b4d95\transformed\lifecycle-livedata-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-ui-tooling-preview-release-42 C:\Users\Damian\.gradle\caches\transforms-3\ca14f17cdb5ea915ea4ae296ee2b175a\transformed\ui-tooling-preview-release\res
+ar.edu.unlam.mobile.scaffold.app-savedstate-1.2.1-43 C:\Users\Damian\.gradle\caches\transforms-3\cc1c8e131f23c29e3d6214692aa12474\transformed\savedstate-1.2.1\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-viewmodel-ktx-2.6.1-44 C:\Users\Damian\.gradle\caches\transforms-3\d912d024578a5fbbaa9a7451bbafeae5\transformed\lifecycle-viewmodel-ktx-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-core-runtime-2.2.0-45 C:\Users\Damian\.gradle\caches\transforms-3\dcd833600a85eadb5987f31170151c6e\transformed\core-runtime-2.2.0\res
+ar.edu.unlam.mobile.scaffold.app-ui-test-manifest-1.5.0-46 C:\Users\Damian\.gradle\caches\transforms-3\dd8bee8b0cf6d8b087618897c8091ad9\transformed\ui-test-manifest-1.5.0\res
+ar.edu.unlam.mobile.scaffold.app-ui-graphics-release-47 C:\Users\Damian\.gradle\caches\transforms-3\df3c2dc31b6933b0377cc783462cd22a\transformed\ui-graphics-release\res
+ar.edu.unlam.mobile.scaffold.app-startup-runtime-1.1.1-48 C:\Users\Damian\.gradle\caches\transforms-3\e4a540597562f457f784ef7dba278a67\transformed\startup-runtime-1.1.1\res
+ar.edu.unlam.mobile.scaffold.app-customview-poolingcontainer-1.0.0-49 C:\Users\Damian\.gradle\caches\transforms-3\e589dafc4ba47e1b7a68879625c98258\transformed\customview-poolingcontainer-1.0.0\res
+ar.edu.unlam.mobile.scaffold.app-material3-1.1.1-50 C:\Users\Damian\.gradle\caches\transforms-3\e756ce71c41d34bfdb926d7711a0e4a3\transformed\material3-1.1.1\res
+ar.edu.unlam.mobile.scaffold.app-hilt-navigation-compose-1.0.0-51 C:\Users\Damian\.gradle\caches\transforms-3\eb6dcd1c5d727f422301b232696e316c\transformed\hilt-navigation-compose-1.0.0\res
+ar.edu.unlam.mobile.scaffold.app-runtime-saveable-release-52 C:\Users\Damian\.gradle\caches\transforms-3\eb9ff2149c66aaab0aff2e4b0fc604a0\transformed\runtime-saveable-release\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-viewmodel-2.6.1-53 C:\Users\Damian\.gradle\caches\transforms-3\f2a75898fe8c4c902befcf8d38c881a7\transformed\lifecycle-viewmodel-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-lifecycle-viewmodel-savedstate-2.6.1-54 C:\Users\Damian\.gradle\caches\transforms-3\f533b777e14fe1cbd2e5cfeee45b3c40\transformed\lifecycle-viewmodel-savedstate-2.6.1\res
+ar.edu.unlam.mobile.scaffold.app-ui-tooling-release-55 C:\Users\Damian\.gradle\caches\transforms-3\fe5e6b45720f3edcb44ee46b39bb4eb6\transformed\ui-tooling-release\res
+ar.edu.unlam.mobile.scaffold.app-resValues-56 C:\proyectos Android\A2-2023-H2-E6\app\build\generated\res\resValues\debug
+ar.edu.unlam.mobile.scaffold.app-packageDebugResources-57 C:\proyectos Android\A2-2023-H2-E6\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+ar.edu.unlam.mobile.scaffold.app-packageDebugResources-58 C:\proyectos Android\A2-2023-H2-E6\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+ar.edu.unlam.mobile.scaffold.app-merged_res-59 C:\proyectos Android\A2-2023-H2-E6\app\build\intermediates\merged_res\debug
+ar.edu.unlam.mobile.scaffold.app-debug-60 C:\proyectos Android\A2-2023-H2-E6\app\src\debug\res
+ar.edu.unlam.mobile.scaffold.app-main-61 C:\proyectos Android\A2-2023-H2-E6\app\src\main\res
